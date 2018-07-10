@@ -101,7 +101,7 @@ class MakerController extends AbstractController
     /**
      * Delete Maker.
      *
-     * @param Maker $TargetMaker
+     * @param Maker $Maker
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      *
