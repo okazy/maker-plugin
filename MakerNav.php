@@ -3,7 +3,7 @@ namespace Plugin\Maker;
 
 use Eccube\Common\EccubeNav;
 
-class Nav implements EccubeNav
+class MakerNav implements EccubeNav
 {
     /**
      * {@inheritdoc}

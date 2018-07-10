@@ -4,7 +4,7 @@ namespace Plugin\Maker;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Eccube\Event\TemplateEvent;
 
-class EventSubscriber implements EventSubscriberInterface
+class MakerEvent implements EventSubscriberInterface
 {
     /**
      * {@inheritdoc}

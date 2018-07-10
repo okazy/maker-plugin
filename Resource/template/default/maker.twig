@@ -1,6 +1,8 @@
 <script>
 $(function () {
-    $('.ec-productRole__category').after($('#plugin_maker_maker > .plugin_maker_code'));
+    if ($('.ec-productRole__profile .plugin_maker_code').length === 0) {
+        $('.ec-productRole__category').after($('#plugin_maker_maker > .plugin_maker_code'));
+    }
 });
 </script>
 
