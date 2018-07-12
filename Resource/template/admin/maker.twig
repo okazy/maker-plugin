@@ -12,8 +12,8 @@
 
 {% set menus = ['product', 'maker'] %}
 
-{% block title %}{{ 'admin.plugin.maker.title'|trans }}{% endblock %}
-{% block sub_title %}{{ 'admin.plugin.maker.sub_title'|trans }}{% endblock %}
+{% block title %}{{ 'maker.title'|trans }}{% endblock %}
+{% block sub_title %}{{ 'maker.sub_title'|trans }}{% endblock %}
 {% block stylesheet %}
     <style type="text/css">
         .attention {
@@ -41,8 +41,8 @@
     <script src="{{ asset('assets/js/vendor/jquery.ui/jquery.ui.mouse.min.js', 'admin') }}"></script>
     <script src="{{ asset('assets/js/vendor/jquery.ui/jquery.ui.sortable.min.js', 'admin') }}"></script>
     <script>
-        var addButton = '{{ 'admin.plugin.maker.maker.add'|trans }}';
-        var editButton = '{{ 'admin.plugin.maker.maker.update'|trans }}';
+        var addButton = '{{ 'maker.maker.add'|trans }}';
+        var editButton = '{{ 'maker.maker.update'|trans }}';
         var modalError = '{{ not form.vars.valid }}';
         $(function () {
             var myModal = $('#add-modal');
@@ -153,7 +153,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <a id="add-button" class="btn btn-default btn-ec-regular" data-toggle="modal"
-                                   data-target="#add-modal">{{ 'admin.plugin.maker.maker.register'|trans }}</a>
+                                   data-target="#add-modal">{{ 'maker.maker.register'|trans }}</a>
                             </div>
                         </div>
                     </div>
@@ -186,7 +186,7 @@
                                                     {% set delete_action = url('admin_plugin_maker_delete', {id: Maker.id}) %}
                                                     <a href="{{ delete_action }}" {{ csrf_token_for_anchor() }}
                                                        data-method="delete"
-                                                       data-message="{{ 'admin.plugin.maker.delete.confirm'|trans }}"
+                                                       data-message="{{ 'maker.delete.confirm'|trans }}"
                                                        data-toggle="tooltip" title="{{ 'common.label.delete'|trans }}">
                                                         <i class="fa fa-close fa-lg text-secondary"
                                                            aria-hidden="true"></i>
@@ -200,7 +200,7 @@
                         </div>
                     {% else %}
                         <div class="card-body p-4 no-record">
-                            <div class="text-center text-muted">{{ 'admin.plugin.maker.maker.no_records'|trans }}</div>
+                            <div class="text-center text-muted">{{ 'maker.maker.no_records'|trans }}</div>
                         </div>
                     {% endif %}
                 </div>

@@ -7,13 +7,5 @@ $(function () {
 </script>
 
 <div id="plugin_maker_maker" class="d-none">
-    <div class="plugin_maker_code">
-        {% if Product.Maker is not empty %}
-            {% if Product.maker_url is not empty %}
-                <p class="item_code">{{ 'admin.plugin.maker.maker'|trans }}： <a href="{{ Product.maker_url }}" target="_blank">{{ Product.Maker.name }}</a></p>
-            {% else %}
-                <p class="item_code">{{ 'admin.plugin.maker.maker'|trans }}： {{ Product.Maker.name }}</p>
-            {% endif %}
-        {% endif %}
-    </div>
+    {{ eccube_block_maker({'Product': Product}) }}
 </div>

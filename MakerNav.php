@@ -15,7 +15,7 @@ class MakerNav implements EccubeNav
         return [
             'product' => [
                 'id' => 'maker',
-                'name' => 'admin.plugin.maker.sub_title',
+                'name' => 'maker.sub_title',
                 'url' => 'admin_plugin_maker_index'
             ]
         ];

@@ -77,12 +77,12 @@ class MakerController extends AbstractController
 
             if ($status) {
                 log_info('Maker add/edit success', ['Maker id' => $Maker->getId()]);
-                $this->addSuccess('admin.plugin.maker.save.complete', 'admin');
+                $this->addSuccess('maker.admin.maker.save.complete', 'admin');
 
                 return $this->redirectToRoute('admin_plugin_maker_index');
             } else {
                 log_info('Maker add/edit fail!', ['Maker id' => $Maker->getId()]);
-                $this->addError('admin.plugin.maker.save.error', 'admin');
+                $this->addError('maker.admin.maker.save.error', 'admin');
             }
         }
 
@@ -116,10 +116,10 @@ class MakerController extends AbstractController
         try {
             $this->makerRepository->delete($Maker);
             log_info('The maker delete success!', ['Maker id' => $Maker->getId()]);
-            $this->addSuccess('admin.plugin.maker.delete.complete', 'admin');
+            $this->addSuccess('maker.admin.maker.delete.complete', 'admin');
         } catch (\Exception $e) {
             log_info('The maker delete fail!', ['Maker id' => $Maker->getId()]);
-            $this->addError('admin.plugin.maker.delete.error', 'admin');
+            $this->addError('maker.admin.maker.delete.error', 'admin');
         }
 
         return $this->redirectToRoute('admin_plugin_maker_index');

@@ -46,7 +46,7 @@ class ProductTypeExtension extends AbstractTypeExtension
     {
         $builder
             ->add('Maker', EntityType::class, [
-                'label' => 'admin.plugin.maker.product_maker.maker',
+                'label' => 'maker.product_maker.maker',
                 'class' => Maker::class,
                 'choice_label' => 'name',
                 'choices' => $this->makerRepository->findBy([], ['sort_no' => 'DESC']),
@@ -57,13 +57,13 @@ class ProductTypeExtension extends AbstractTypeExtension
                 ]
             ])
             ->add('maker_url', TextType::class, [
-                'label' => 'admin.plugin.maker.product_maker.maker_url',
+                'label' => 'maker.product_maker.maker_url',
                 'required' => false,
                 'constraints' => [
                     new Url(),
                 ],
                 'attr' => [
-                    'placeholder' => 'admin.plugin.maker.placeholder.url',
+                    'placeholder' => 'maker.placeholder.url',
                 ],
                 'eccube_form_options' => [
                     'auto_render' => true,
