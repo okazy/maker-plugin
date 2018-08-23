@@ -1,0 +1,9 @@
+{
+  "name": "Maker",
+  "version": "1.0.0",
+  "description": "Maker",
+  "type": "eccube-plugin",
+  "extra": {
+    "code": "Maker"
+  }
+}

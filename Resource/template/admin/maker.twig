@@ -163,17 +163,17 @@ file that was distributed with this source code.
                                             </div>
                                             <div class="col-auto text-right">
                                                 <a class="btn btn-ec-actionIcon mr-3 action-up{% if loop.first %} disabled{% endif %}" href="#"
-                                                   data-toggle="tooltip" data-placement="top" title="{{ 'admin.common.label.move.up'|trans }}">
+                                                   data-toggle="tooltip" data-placement="top" title="{{ 'admin.common.up'|trans }}">
                                                     <i class="fa fa-arrow-up fa-lg text-secondary"></i>
                                                 </a>
                                                 <a class="btn btn-ec-actionIcon mr-3 action-down{% if loop.last %} disabled{% endif %}" href="#"
-                                                   data-toggle="tooltip" data-placement="top" title="{{ 'admin.common.label.move.down'|trans }}">
+                                                   data-toggle="tooltip" data-placement="top" title="{{ 'admin.common.down'|trans }}">
                                                     <i class="fa fa-arrow-down fa-lg text-secondary"></i>
                                                 </a>
                                                 <a class="btn btn-ec-actionIcon mr-3 action-edit" data-toggle="tooltip" data-placement="top" title="{{ 'maker.admin.maker.edit'|trans }}">
                                                     <i class="fa fa-pencil fa-lg text-secondary"></i>
                                                 </a>
-                                                <a class="btn btn-ec-actionIcon mr-3" data-toggle="modal" data-toggle="tooltip" data-target="#confirmModal-{{ Maker.id }}" data-placement="top" title="{{ 'admin.common.label.delete'|trans }}">
+                                                <a class="btn btn-ec-actionIcon mr-3" data-toggle="modal" data-toggle="tooltip" data-target="#confirmModal-{{ Maker.id }}" data-placement="top" title="{{ 'admin.common.delete'|trans }}">
                                                     <i class="fa fa-close fa-lg text-secondary"></i>
                                                 </a>
                                             </div>
@@ -190,9 +190,9 @@ file that was distributed with this source code.
                                                         <p class="text-left">{{ 'maker.admin.delete.confirm.message'|trans }}</p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button class="btn btn-ec-sub" type="button" data-dismiss="modal">{{ 'admin.common.label.cancel'|trans }}</button>
+                                                        <button class="btn btn-ec-sub" type="button" data-dismiss="modal">{{ 'admin.common.cancel'|trans }}</button>
                                                         <a href="{{ url('maker_admin_delete', {'id' : Maker.id}) }}" class="btn btn-ec-delete" data-confirm="false"{{ csrf_token_for_anchor() }} data-method="delete">
-                                                            {{ 'admin.common.label.delete'|trans }}
+                                                            {{ 'admin.common.delete'|trans }}
                                                         </a>
                                                     </div>
                                                 </div>
@@ -206,10 +206,10 @@ file that was distributed with this source code.
                                                 {{ form_errors(forms[Maker.id].name) }}
                                             </div>
                                             <div class="col-auto align-items-center">
-                                                <button class="btn btn-ec-conversion" type="submit">{{ 'admin.common.label.ok'|trans }}</button>
+                                                <button class="btn btn-ec-conversion" type="submit">{{ 'admin.common.save'|trans }}</button>
                                             </div>
                                             <div class="col-auto align-items-center">
-                                                <button class="btn btn-ec-sub action-edit-cancel" type="button">{{ 'admin.common.label.cancel'|trans }}</button>
+                                                <button class="btn btn-ec-sub action-edit-cancel" type="button">{{ 'admin.common.cancel'|trans }}</button>
                                             </div>
                                         </form>
                                     </li>
