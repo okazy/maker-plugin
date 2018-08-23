@@ -46,7 +46,7 @@ class MakerControllerTest extends MakerWebCommon
     public function testMakerRender()
     {
         $crawler = $this->client->request('GET', $this->generateUrl('maker_admin_index'));
-        $this->assertContains('データはありません', $crawler->filter('.no-record')->html());
+        $this->assertEquals(0, $crawler->filter('.sortable-item')->count());
     }
 
     /**
@@ -132,7 +132,7 @@ class MakerControllerTest extends MakerWebCommon
     /**
      * Test maker edit.
      */
-    public function testMakerEditNameIsEmpty()
+    public function testMakerInlineEditNameIsEmpty()
     {
         $Maker = $this->createMaker(1);
         $formData = $this->createMakerFormData($Maker->getId());
@@ -144,17 +144,17 @@ class MakerControllerTest extends MakerWebCommon
         $crawler = $this->client->request(
             'POST',
             $this->generateUrl('maker_admin_index', ['id' => $Maker->getId()]),
-            ['maker' => $formData]
+            ['maker_'.$Maker->getId() => $formData]
         );
 
         // Check message
-        $this->assertContains('入力されていません。', $crawler->filter('#form1 .form-error-message')->html());
+        $this->assertContains('入力されていません。', $crawler->filter('#formInline'.$Maker->getId().' .form-error-message')->html());
     }
 
     /**
      * Test maker edit.
      */
-    public function testMakerEditNameIsDuplicate()
+    public function testMakerInlineEditNameIsDuplicate()
     {
         $MakerBefore = $this->createMaker(1);
         $Maker = $this->createMaker(1);
@@ -168,35 +168,35 @@ class MakerControllerTest extends MakerWebCommon
         $crawler = $this->client->request(
             'POST',
             $this->generateUrl('maker_admin_index', ['id' => $Maker->getId()]),
-            ['maker' => $formData]
+            ['maker_'.$Maker->getId() => $formData]
         );
 
         // Check message
-        $this->assertContains('既に使用されています。', $crawler->filter('#form1 .form-error-message')->html());
+        $this->assertContains('既に使用されています。', $crawler->filter('#formInline'.$Maker->getId().' .form-error-message')->html());
     }
+
+//    /**
+//     * Test maker edit.
+//     */
+//    public function testMakerEditIdIsNotFound()
+//    {
+//        $Maker = $this->createMaker(1);
+//        $editId = $Maker->getId() + 1;
+//        $formData = $this->createMakerFormData($editId);
+//
+//        $this->client->request(
+//            'POST',
+//            $this->generateUrl('maker_admin_index', ['id' => $editId]),
+//            ['_maker' => $formData]
+//        );
+//
+//        $this->assertEquals(404, $this->client->getResponse()->getStatusCode());
+//    }
 
     /**
      * Test maker edit.
      */
-    public function testMakerEditIdIsNotFound()
-    {
-        $Maker = $this->createMaker(1);
-        $editId = $Maker->getId() + 1;
-        $formData = $this->createMakerFormData($editId);
-
-        $this->client->request(
-            'POST',
-            $this->generateUrl('maker_admin_index', ['id' => $editId]),
-            ['_maker' => $formData]
-        );
-
-        $this->assertEquals(404, $this->client->getResponse()->getStatusCode());
-    }
-
-    /**
-     * Test maker edit.
-     */
-    public function testMakerEdit()
+    public function testMakerInlineEdit()
     {
         $Maker = $this->createMaker(1);
         $formData = $this->createMakerFormData($Maker->getId());
@@ -204,7 +204,7 @@ class MakerControllerTest extends MakerWebCommon
         $this->client->request(
             'POST',
             $this->generateUrl('maker_admin_index', ['id' => $Maker->getId()]),
-            ['maker' => $formData]
+            ['maker_'.$Maker->getId() => $formData]
         );
 
         // Check redirect
@@ -228,7 +228,7 @@ class MakerControllerTest extends MakerWebCommon
 
         $this->client->request(
             'GET',
-            $this->generateUrl('maker_admin_index', ['id' => $Maker->getId()])
+            $this->generateUrl('maker_admin_delete', ['id' => $Maker->getId()])
         );
 
         $this->assertEquals(405, $this->client->getResponse()->getStatusCode());
@@ -283,8 +283,7 @@ class MakerControllerTest extends MakerWebCommon
         $this->assertContains('メーカーを削除しました。', $crawler->filter('.alert')->html());
 
         // Check item name
-        $html = $crawler->filter('.no-record')->html();
-        $this->assertContains('データはありません', $html);
+        $this->assertEquals(0,  $crawler->filter('.sortable-item')->count());
 
         $this->assertNull($Maker->getId());
     }

@@ -104,7 +104,7 @@ class ProductMakerTest extends MakerWebCommon
         $crawler = $client->followRedirect();
 
         // Check message
-        $this->assertContains('登録が完了しました。', $crawler->filter('.alert')->html());
+        $this->assertContains('保存しました', $crawler->filter('.alert')->html());
 
         // Check layout
         $this->assertContains($formData[self::MAKER_URL], $crawler->filter('body .c-container')->html());
@@ -184,7 +184,7 @@ class ProductMakerTest extends MakerWebCommon
         $crawler = $client->followRedirect();
 
         // Check message
-        $this->assertContains('登録が完了しました。', $crawler->filter('.alert')->html());
+        $this->assertContains('保存しました', $crawler->filter('.alert')->html());
 
         // Check database
         $Product = $this->productRepository->findOneBy([], ['id' => 'DESC']);
@@ -263,7 +263,7 @@ class ProductMakerTest extends MakerWebCommon
         $crawler = $client->followRedirect();
 
         // Check message
-        $this->assertContains('登録が完了しました。', $crawler->filter('.alert')->html());
+        $this->assertContains('保存しました', $crawler->filter('.alert')->html());
 
         // Check database
         $Product = $this->productRepository->findOneBy([], ['id' => 'DESC']);
@@ -348,7 +348,7 @@ class ProductMakerTest extends MakerWebCommon
         $crawler = $client->followRedirect();
 
         // Check message
-        $this->assertContains('登録が完了しました。', $crawler->filter('.alert')->html());
+        $this->assertContains('保存しました', $crawler->filter('.alert')->html());
 
         // Check database
         $Product = $this->productRepository->findOneBy([], ['id' => 'DESC']);
@@ -465,7 +465,7 @@ class ProductMakerTest extends MakerWebCommon
         $crawler = $client->followRedirect();
 
         // Check message
-        $this->assertContains('登録が完了しました。', $crawler->filter('.alert')->html());
+        $this->assertContains('保存しました', $crawler->filter('.alert')->html());
 
         // Check database
         $Product = $this->productRepository->findOneBy([], ['id' => 'DESC']);
@@ -581,7 +581,7 @@ class ProductMakerTest extends MakerWebCommon
         $crawler = $client->followRedirect();
 
         // Check message
-        $this->assertContains('登録が完了しました。', $crawler->filter('.alert')->html());
+        $this->assertContains('保存しました', $crawler->filter('.alert')->html());
 
         // Check database
         $Product = $this->productRepository->findOneBy([], ['id' => 'DESC']);
