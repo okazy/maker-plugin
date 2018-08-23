@@ -1,11 +1,21 @@
-<script>
-$(function () {
-    if ($('.ec-productRole__profile .plugin_maker_code').length === 0) {
-        $('.ec-productRole__category').after($('#plugin_maker_maker > .plugin_maker_code'));
-    }
-});
-</script>
+{#
+This file is part of EC-CUBE
 
-<div id="plugin_maker_maker" class="d-none">
-    {{ eccube_block_maker({'Product': Product}) }}
-</div>
+Copyright(c) LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+{% block maker %}
+    {% if Product.Maker is not empty %}
+        <div class="ec-productRole__maker">
+            {% if Product.maker_url is not empty %}
+                <p class="ec-maker">{{ 'maker.admin.maker'|trans }}： <a href="{{ Product.maker_url }}" target="_blank">{{ Product.Maker.name }}</a></p>
+            {% else %}
+                <p class="ec-maker">{{ 'maker.admin.maker'|trans }}： {{ Product.Maker.name }}</p>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock maker %}
