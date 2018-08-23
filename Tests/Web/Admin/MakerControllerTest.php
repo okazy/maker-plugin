@@ -283,7 +283,7 @@ class MakerControllerTest extends MakerWebCommon
         $this->assertContains('メーカーを削除しました。', $crawler->filter('.alert')->html());
 
         // Check item name
-        $this->assertEquals(0,  $crawler->filter('.sortable-item')->count());
+        $this->assertEquals(0, $crawler->filter('.sortable-item')->count());
 
         $this->assertNull($Maker->getId());
     }
