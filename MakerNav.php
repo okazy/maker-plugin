@@ -29,7 +29,7 @@ class MakerNav implements EccubeNav
                 'children' => [
                     'maker4' => [
                         'id' => 'maker4',
-                        'name' => 'maker.admin.sub_title',
+                        'name' => 'maker.admin.title',
                         'url' => 'maker_admin_index',
                     ],
                 ],
