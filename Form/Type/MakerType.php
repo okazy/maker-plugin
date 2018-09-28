@@ -50,6 +50,7 @@ class MakerType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
+                'required' => false,
                 'attr' => [
                     'maxlength' => $this->eccubeConfig['eccube_stext_len'],
                 ],
