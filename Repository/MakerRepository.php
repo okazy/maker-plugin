@@ -11,10 +11,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker\Repository;
+namespace Plugin\Maker4\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Plugin\Maker\Entity\Maker;
+use Plugin\Maker4\Entity\Maker;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**

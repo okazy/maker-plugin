@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker;
+namespace Plugin\Maker4;
 
 use Eccube\Common\EccubeNav;
 
@@ -27,8 +27,8 @@ class MakerNav implements EccubeNav
         return [
             'product' => [
                 'children' => [
-                    'maker' => [
-                        'id' => 'maker',
+                    'maker4' => [
+                        'id' => 'maker4',
                         'name' => 'maker.admin.sub_title',
                         'url' => 'maker_admin_index',
                     ],

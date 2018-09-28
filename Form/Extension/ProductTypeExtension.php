@@ -11,12 +11,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker\Form\Extension;
+namespace Plugin\Maker4\Form\Extension;
 
 use Eccube\Common\EccubeConfig;
 use Eccube\Form\Type\Admin\ProductType;
-use Plugin\Maker\Entity\Maker;
-use Plugin\Maker\Repository\MakerRepository;
+use Plugin\Maker4\Entity\Maker;
+use Plugin\Maker4\Repository\MakerRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\Extension\Core\Type\TextType;

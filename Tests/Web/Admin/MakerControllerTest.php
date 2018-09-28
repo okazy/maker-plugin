@@ -11,13 +11,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker\Tests\Web\Admin;
+namespace Plugin\Maker4\Tests\Web\Admin;
 
 use Eccube\Common\Constant;
 use Faker\Generator;
-use Plugin\Maker\Tests\Web\MakerWebCommon;
+use Plugin\Maker4\Tests\Web\MakerWebCommon;
 use Symfony\Component\DomCrawler\Crawler;
-use Plugin\Maker\Repository\MakerRepository;
+use Plugin\Maker4\Repository\MakerRepository;
 
 /**
  * Class MakerControllerTest.

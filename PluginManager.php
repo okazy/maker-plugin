@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker;
+namespace Plugin\Maker4;
 
 use Eccube\Plugin\AbstractPluginManager;
 

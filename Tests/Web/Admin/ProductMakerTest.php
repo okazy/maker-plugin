@@ -11,10 +11,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker\Tests\Web\Admin;
+namespace Plugin\Maker4\Tests\Web\Admin;
 
 use Faker\Generator;
-use Plugin\Maker\Tests\Web\MakerWebCommon;
+use Plugin\Maker4\Tests\Web\MakerWebCommon;
 use Symfony\Component\HttpKernel\Client;
 use Eccube\Repository\ProductRepository;
 
