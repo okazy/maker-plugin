@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker\Form\Type;
+namespace Plugin\Maker4\Form\Type;
 
 use Eccube\Common\EccubeConfig;
 use Symfony\Component\Form\AbstractType;
@@ -50,6 +50,7 @@ class MakerType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
+                'required' => false,
                 'attr' => [
                     'maxlength' => $this->eccubeConfig['eccube_stext_len'],
                 ],

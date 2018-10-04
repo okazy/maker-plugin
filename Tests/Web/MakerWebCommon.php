@@ -11,12 +11,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker\Tests\Web;
+namespace Plugin\Maker4\Tests\Web;
 
 use Eccube\Common\Constant;
 use Eccube\Tests\Web\Admin\AbstractAdminWebTestCase;
 use Faker\Generator;
-use Plugin\Maker\Entity\Maker;
+use Plugin\Maker4\Entity\Maker;
 
 /**
  * Class MakerWebTestCase

@@ -11,10 +11,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker\Tests\Web\Admin;
+namespace Plugin\Maker4\Tests\Web\Admin;
 
 use Faker\Generator;
-use Plugin\Maker\Tests\Web\MakerWebCommon;
+use Plugin\Maker4\Tests\Web\MakerWebCommon;
 use Symfony\Component\HttpKernel\Client;
 use Eccube\Repository\ProductRepository;
 
@@ -104,7 +104,7 @@ class ProductMakerTest extends MakerWebCommon
         $crawler = $client->followRedirect();
 
         // Check message
-        $this->assertContains('登録が完了しました。', $crawler->filter('.alert')->html());
+        $this->assertContains('保存しました', $crawler->filter('.alert')->html());
 
         // Check layout
         $this->assertContains($formData[self::MAKER_URL], $crawler->filter('body .c-container')->html());
@@ -184,7 +184,7 @@ class ProductMakerTest extends MakerWebCommon
         $crawler = $client->followRedirect();
 
         // Check message
-        $this->assertContains('登録が完了しました。', $crawler->filter('.alert')->html());
+        $this->assertContains('保存しました', $crawler->filter('.alert')->html());
 
         // Check database
         $Product = $this->productRepository->findOneBy([], ['id' => 'DESC']);
@@ -263,7 +263,7 @@ class ProductMakerTest extends MakerWebCommon
         $crawler = $client->followRedirect();
 
         // Check message
-        $this->assertContains('登録が完了しました。', $crawler->filter('.alert')->html());
+        $this->assertContains('保存しました', $crawler->filter('.alert')->html());
 
         // Check database
         $Product = $this->productRepository->findOneBy([], ['id' => 'DESC']);
@@ -348,7 +348,7 @@ class ProductMakerTest extends MakerWebCommon
         $crawler = $client->followRedirect();
 
         // Check message
-        $this->assertContains('登録が完了しました。', $crawler->filter('.alert')->html());
+        $this->assertContains('保存しました', $crawler->filter('.alert')->html());
 
         // Check database
         $Product = $this->productRepository->findOneBy([], ['id' => 'DESC']);
@@ -465,7 +465,7 @@ class ProductMakerTest extends MakerWebCommon
         $crawler = $client->followRedirect();
 
         // Check message
-        $this->assertContains('登録が完了しました。', $crawler->filter('.alert')->html());
+        $this->assertContains('保存しました', $crawler->filter('.alert')->html());
 
         // Check database
         $Product = $this->productRepository->findOneBy([], ['id' => 'DESC']);
@@ -581,7 +581,7 @@ class ProductMakerTest extends MakerWebCommon
         $crawler = $client->followRedirect();
 
         // Check message
-        $this->assertContains('登録が完了しました。', $crawler->filter('.alert')->html());
+        $this->assertContains('保存しました', $crawler->filter('.alert')->html());
 
         // Check database
         $Product = $this->productRepository->findOneBy([], ['id' => 'DESC']);

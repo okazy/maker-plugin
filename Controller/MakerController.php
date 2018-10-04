@@ -11,14 +11,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker\Controller;
+namespace Plugin\Maker4\Controller;
 
 use Eccube\Controller\AbstractController;
-use Plugin\Maker\Entity\Maker;
-use Plugin\Maker\Form\Type\MakerType;
-use Plugin\Maker\Repository\MakerRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Plugin\Maker4\Entity\Maker;
+use Plugin\Maker4\Form\Type\MakerType;
+use Plugin\Maker4\Repository\MakerRepository;
+use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -55,7 +54,7 @@ class MakerController extends AbstractController
      * @throws \Doctrine\ORM\OptimisticLockException
      *
      * @Route("/%eccube_admin_route%/maker", name="maker_admin_index")
-     * @Template("@Maker/admin/maker.twig")
+     * @Template("@Maker4/admin/maker.twig")
      */
     public function index(Request $request)
     {
@@ -127,8 +126,11 @@ class MakerController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      *
-     * @Method("DELETE")
-     * @Route("/%eccube_admin_route%/maker/{id}/delete", name="maker_admin_delete", requirements={"id":"\d+"})
+     * @Route(
+     *     "/%eccube_admin_route%/maker/{id}/delete",
+     *     name="maker_admin_delete", requirements={"id":"\d+"},
+     *     methods={"DELETE"}
+     * )
      */
     public function delete(Request $request, Maker $Maker)
     {
@@ -159,8 +161,11 @@ class MakerController extends AbstractController
      *
      * @throws \Exception
      *
-     * @Method("POST")
-     * @Route("/%eccube_admin_route%/maker/move_sort_no", name="maker_admin_move_sort_no")
+     * @Route(
+     *     "/%eccube_admin_route%/maker/move_sort_no",
+     *     name="maker_admin_move_sort_no",
+     *     methods={"POST"}
+     * )
      */
     public function moveSortNo(Request $request)
     {

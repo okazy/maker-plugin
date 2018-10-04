@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker;
+namespace Plugin\Maker4;
 
 use Eccube\Common\EccubeTwigBlock;
 
@@ -19,6 +19,6 @@ class MakerTwigBlock implements EccubeTwigBlock
 {
     public static function getTwigBlock()
     {
-        return ['@Maker/default/maker.twig'];
+        return ['@Maker4/default/maker.twig'];
     }
 }
