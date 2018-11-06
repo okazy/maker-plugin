@@ -19,10 +19,10 @@ env:
   global:
     PLUGIN_CODE=Maker
   matrix:
-    # ec-cube master
-    - ECCUBE_VERSION=master DB=mysql USER=root DBNAME=myapp_test DBPASS=' ' DBUSER=root
-    - ECCUBE_VERSION=master DB=pgsql USER=postgres DBNAME=myapp_test DBPASS=password DBUSER=postgres
-    - ECCUBE_VERSION=master DB=sqlite
+    # ec-cube 3.0
+    - ECCUBE_VERSION=3.0 DB=mysql USER=root DBNAME=myapp_test DBPASS=' ' DBUSER=root
+    - ECCUBE_VERSION=3.0 DB=pgsql USER=postgres DBNAME=myapp_test DBPASS=password DBUSER=postgres
+    - ECCUBE_VERSION=3.0 DB=sqlite
     # ec-cube 3.0.9
     - ECCUBE_VERSION=3.0.9 DB=mysql USER=root DBNAME=myapp_test DBPASS=' ' DBUSER=root
     - ECCUBE_VERSION=3.0.9 DB=pgsql USER=postgres DBNAME=myapp_test DBPASS=password DBUSER=postgres
@@ -36,18 +36,18 @@ matrix:
     - php: 5.3
       dist: precise
     - php: 7.1
-      env: ECCUBE_VERSION=master DB=pgsql USER=postgres DBNAME=myapp_test DBPASS=password DBUSER=postgres COVERAGE=true
+      env: ECCUBE_VERSION=3.0 DB=pgsql USER=postgres DBNAME=myapp_test DBPASS=password DBUSER=postgres COVERAGE=true
 
   exclude:
     - php: 7.1
-      env: ECCUBE_VERSION=master DB=pgsql USER=postgres DBNAME=myapp_test DBPASS=password DBUSER=postgres
+      env: ECCUBE_VERSION=3.0 DB=pgsql USER=postgres DBNAME=myapp_test DBPASS=password DBUSER=postgres
   allow_failures:
     - php: 5.4
-      env: ECCUBE_VERSION=master DB=sqlite
+      env: ECCUBE_VERSION=3.0 DB=sqlite
     - php: 5.5
-      env: ECCUBE_VERSION=master DB=sqlite
+      env: ECCUBE_VERSION=3.0 DB=sqlite
     - php: 5.6
-      env: ECCUBE_VERSION=master DB=sqlite
+      env: ECCUBE_VERSION=3.0 DB=sqlite
     - php: 7.0
       env: ECCUBE_VERSION=3.0.9 DB=mysql USER=root DBNAME=myapp_test DBPASS=' ' DBUSER=root
     - php: 7.0
@@ -68,7 +68,7 @@ before_script:
   - git clone https://github.com/EC-CUBE/ec-cube.git
   - cd ec-cube
   # checkout version
-  - sh -c "if [ ! '${ECCUBE_VERSION}' = 'master' ]; then  git checkout -b ${ECCUBE_VERSION} refs/tags/${ECCUBE_VERSION}; fi"
+  - sh -c "if [ ! '${ECCUBE_VERSION}' = '3.0' ]; then  git checkout -b ${ECCUBE_VERSION} refs/tags/${ECCUBE_VERSION}; fi"
   # update composer
   - composer selfupdate
   - composer global require hirak/prestissimo
